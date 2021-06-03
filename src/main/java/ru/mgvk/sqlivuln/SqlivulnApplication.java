@@ -36,7 +36,7 @@ public class SqlivulnApplication {
         @Override
         protected void configure(HttpSecurity http) throws Exception {
             http.authorizeRequests()
-                    .antMatchers("/").permitAll()
+                    .antMatchers("/login").permitAll()
                     .anyRequest().authenticated()
                     .and()
                     .httpBasic();

@@ -2,10 +2,7 @@ package ru.mgvk.sqlivuln;
 
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.EntityManager;
 import java.sql.PreparedStatement;
@@ -57,6 +54,13 @@ public class Controller {
         );
 
 
+    }
+
+
+    @GetMapping(path = "/")
+    @ResponseBody
+    public String empty(){
+        return "Logged in!1!!11! Go to /get";
     }
 
     @RequestMapping(path = "/put", method = RequestMethod.GET)
